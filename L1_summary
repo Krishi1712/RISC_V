@@ -1,0 +1,16 @@
+
+* **The flow is step-by-step.** You start by writing the chip’s behavior in a high-level way (C language). That’s like a blueprint—easy to test, quick to adjust.
+* **RTL comes next.** The design is then translated into RTL (Verilog or similar), which is a closer description of actual hardware. This is still a “soft copy”—not yet silicon, but hardware in code.
+* **Integration phase.** Here, all the blocks—CPU, memory, peripherals, analog parts—get wired together into a system. After synthesis, you get a netlist (a map of all the gates). Eventually, this leads to the GDSII file, which is what factories use to make the chip.
+* **Physical implementation.** Now it’s a real chip that can run at working speeds. That same single chip design could power anything from a smartwatch to a TV panel.
+
+Across all these stages, **testing happens repeatedly**. The testbench written in C keeps checking the design at every level, ensuring the final chip behaves exactly like the initial model.
+
+So, the summary basically says:
+
+* Start high-level (easy to think about).
+* Gradually refine into hardware (more detailed, harder to change).
+* Keep testing all the way.
+* Result: one chip design that can be reused across many gadgets.
+
+
